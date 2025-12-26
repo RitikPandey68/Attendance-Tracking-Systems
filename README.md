@@ -1,1 +1,209 @@
-# 🎓 AI Powered Attendance Tracking System\n\n## Overview\nA comprehensive, modern attendance and academic management system built with FastAPI backend and Streamlit frontend. This system provides complete functionality for students, faculty, and administrators with AI-powered features.\n\n## ✨ Features\n\n### 🎯 Core Features\n- **Smart Attendance Tracking** with detailed analytics\n- **Student Management** with comprehensive profiles\n- **Faculty Management** with teaching tools\n- **Academic Resource Management** (Notes, Assignments, Announcements)\n- **Fee Management** with payment tracking\n- **Results & Grade Management**\n- **Administration Dashboard** with system analytics\n- **Role-based Access Control**\n\n### 📊 Student Dashboard\n- **Personal Profile Management**\n  - Name, DOB, USN, Degree, College, Stream\n  - Email-ID, Mobile Number, Address\n  - Photo upload capability\n  - Emergency contact information\n\n- **Attendance Analytics**\n  - Daily attendance count\n  - Weekly attendance summary\n  - Monthly attendance reports\n  - Subject-wise attendance tracking\n  - Overall attendance percentage\n  - Attendance trends and visualizations\n\n- **Academic Resources**\n  - Access to faculty notes by subject\n  - Notice board and announcements\n  - Exam schedules (Internal & Lab)\n  - Assignment submissions\n  - Study materials and references\n\n- **Results & Performance**\n  - Exam results (Internal & Lab)\n  - Semester-wise CGPA tracking\n  - Subject-wise performance analysis\n  - Grade history and trends\n\n- **Fee Management**\n  - Fee details and payment status\n  - Payment history\n  - Pending fee notifications\n  - Online payment integration ready\n\n### 👨‍🏫 Faculty Dashboard\n- **Professional Profile**\n  - Name, Email-ID, Position, Stream\n  - Department, College name, Photo\n  - Mobile Number, Employee ID\n  - Qualifications and experience\n  - Office hours and cabin details\n\n- **Teaching Tools**\n  - Attendance marking system\n  - Class-wise attendance reports\n  - Student performance tracking\n  - Subject-wise analytics\n\n- **Content Management**\n  - Upload and manage notes by section\n  - Create announcements and notices\n  - Manage assignments and submissions\n  - Grade assignments and provide feedback\n\n- **Exam Management**\n  - Schedule exams (Internal & Lab)\n  - Manage exam results\n  - Generate performance reports\n  - Track student progress\n\n### ⚙️ Administration Dashboard\n- **System Overview**\n  - Total students and faculty statistics\n  - System usage analytics\n  - Recent activities monitoring\n  - Performance metrics\n\n- **User Management**\n  - Student and faculty registration approval\n  - Role-based access control\n  - Account management\n  - Bulk operations\n\n- **Academic Administration**\n  - Academic year and semester management\n  - Course and department setup\n  - College information management\n  - System configuration\n\n- **Financial Management**\n  - Fee structure management\n  - Payment tracking and reports\n  - Financial analytics\n  - Revenue monitoring\n\n## 🏗️ System Architecture\n\n### Backend (FastAPI)\n```\nbackend/\n├── models/           # Pydantic models\n│   ├── student.py    # Student data models\n│   ├── faculty.py    # Faculty data models\n│   ├── academic.py   # Academic resources models\n│   └── administration.py # Admin models\n├── routers/          # API endpoints\n│   ├── auth.py       # Authentication\n│   ├── student.py    # Student operations\n│   ├── faculty.py    # Faculty operations\n│   ├── attendance.py # Attendance management\n│   ├── academic.py   # Academic resources\n│   ├── fees.py       # Fee management\n│   └── administration.py # Admin operations\n├── core/             # Core functionality\n│   ├── database.py   # MongoDB connection\n│   └── config.py     # Configuration\n└── main.py           # FastAPI application\n```\n\n### Frontend (Streamlit)\n```\nfrontend/\n├── streamlit_app/\n│   └── Home.py       # Main application\n└── requirements.txt  # Dependencies\n```\n\n## 🚀 Quick Start\n\n### Prerequisites\n- Python 3.8 or higher\n- MongoDB (local or cloud)\n- Git\n\n### Installation & Setup\n\n1. **Clone the Repository**\n   ```bash\n   git clone <repository-url>\n   cd \"AI Powered Attendence Tracking System\"\n   ```\n\n2. **Automated Setup (Windows)**\n   ```cmd\n   start_system.bat\n   ```\n   This will:\n   - Install all dependencies\n   - Start the backend server\n   - Launch the frontend application\n\n3. **Manual Setup**\n   \n   **Backend Setup:**\n   ```bash\n   cd backend\n   pip install -r requirements.txt\n   uvicorn main:app --reload --host 0.0.0.0 --port 8000\n   ```\n   \n   **Frontend Setup:**\n   ```bash\n   cd frontend\n   pip install -r requirements.txt\n   cd streamlit_app\n   streamlit run Home.py --server.port 8501\n   ```\n\n### 🌐 Access Points\n- **Frontend Application:** http://localhost:8501\n- **Backend API:** http://localhost:8000\n- **API Documentation:** http://localhost:8000/docs\n- **API Redoc:** http://localhost:8000/redoc\n\n## 📱 User Guide\n\n### For Students\n1. **Registration:** Create account with personal and academic details\n2. **Login:** Access your personalized dashboard\n3. **View Attendance:** Check daily, weekly, monthly attendance\n4. **Access Notes:** Download study materials and notes\n5. **Check Results:** View exam results and CGPA\n6. **Manage Fees:** Track fee payments and dues\n\n### For Faculty\n1. **Registration:** Create faculty account with professional details\n2. **Mark Attendance:** Record student attendance for classes\n3. **Upload Notes:** Share study materials with students\n4. **Create Announcements:** Post notices and updates\n5. **Manage Assignments:** Create and grade assignments\n6. **Schedule Exams:** Set exam dates and manage results\n\n### For Administrators\n1. **System Overview:** Monitor overall system performance\n2. **User Management:** Approve registrations and manage accounts\n3. **Academic Setup:** Configure academic years, semesters\n4. **Fee Management:** Set fee structures and track payments\n5. **Generate Reports:** Create comprehensive system reports\n\n## 🔧 Configuration\n\n### Database Configuration\nUpdate `backend/core/config.py` with your MongoDB connection details:\n```python\nMONGODB_URL = \"mongodb://localhost:27017\"\nDATABASE_NAME = \"attendance_system\"\n```\n\n### Environment Variables\nCreate `.env` file in backend directory:\n```env\nSECRET_KEY=your-secret-key-here\nALGORITHM=HS256\nACCESS_TOKEN_EXPIRE_MINUTES=30\nMONGODB_URL=mongodb://localhost:27017\nDATABASE_NAME=attendance_system\n```\n\n## 🧪 Testing\n\n### Run Test Suite\n```bash\n# Backend API tests\ncd backend\npython -m pytest\n\n# Complete system test\npython ../test_complete_system.py\n```\n\n### Test Coverage\n- Authentication and authorization\n- Student and faculty operations\n- Attendance management\n- Academic resource management\n- Fee management\n- Administration features\n\n## 📊 API Documentation\n\n### Key Endpoints\n\n#### Authentication\n- `POST /auth/register/student` - Student registration\n- `POST /auth/register/faculty` - Faculty registration\n- `POST /auth/login` - User login\n- `GET /auth/profile` - Get user profile\n\n#### Attendance\n- `POST /attendance/enroll` - Mark attendance\n- `GET /attendance/student/{id}/stats` - Detailed attendance stats\n- `GET /attendance/student/{id}/summary` - Attendance summary\n\n#### Academic Resources\n- `POST /academic/notes` - Create notes\n- `GET /academic/notes` - Get notes\n- `POST /academic/announcements` - Create announcements\n- `GET /academic/announcements` - Get announcements\n\n#### Fee Management\n- `GET /fees/student/{id}` - Get student fees\n- `POST /fees/pay` - Process payment\n- `GET /fees/summary/{id}` - Fee summary\n\n#### Administration\n- `GET /admin/dashboard` - Dashboard data\n- `GET /admin/reports/students` - Student reports\n- `GET /admin/reports/faculty` - Faculty reports\n\n## 🔒 Security Features\n\n- **JWT Token Authentication**\n- **Role-based Access Control**\n- **Password Hashing** with bcrypt\n- **Input Validation** with Pydantic\n- **CORS Protection**\n- **SQL Injection Prevention**\n- **XSS Protection**\n\n## 🎨 UI/UX Features\n\n- **Responsive Design** - Works on all devices\n- **Dark/Light Theme** support\n- **Interactive Charts** with Plotly\n- **Real-time Updates**\n- **Intuitive Navigation**\n- **Professional Styling**\n- **Accessibility Compliant**\n\n## 🚀 Advanced Features\n\n### AI-Powered Features (Ready for Integration)\n- **Face Recognition** attendance marking\n- **Predictive Analytics** for student performance\n- **Smart Notifications** and alerts\n- **Automated Report Generation**\n- **Intelligent Scheduling**\n\n### Integration Ready\n- **Payment Gateway** integration\n- **Email Notifications**\n- **SMS Alerts**\n- **Cloud Storage** for files\n- **Mobile App** API support\n\n## 📈 Performance\n\n- **Fast API** responses with async/await\n- **Efficient Database** queries with MongoDB\n- **Caching** for frequently accessed data\n- **Optimized Frontend** with Streamlit\n- **Scalable Architecture**\n\n## 🛠️ Troubleshooting\n\n### Common Issues\n\n1. **Database Connection Error**\n   - Ensure MongoDB is running\n   - Check connection string in config\n   - Verify network connectivity\n\n2. **Import Errors**\n   - Install all requirements: `pip install -r requirements.txt`\n   - Check Python version compatibility\n   - Verify virtual environment activation\n\n3. **Port Already in Use**\n   - Change port in startup commands\n   - Kill existing processes\n   - Use different port numbers\n\n4. **Authentication Issues**\n   - Clear browser cache\n   - Check token expiration\n   - Verify user credentials\n\n### Getting Help\n- Check the API documentation at `/docs`\n- Review error logs in console\n- Test API endpoints individually\n- Verify database collections\n\n## 📝 Development\n\n### Adding New Features\n1. Create Pydantic models in `models/`\n2. Implement API endpoints in `routers/`\n3. Add frontend components in Streamlit\n4. Update tests and documentation\n5. Test thoroughly before deployment\n\n### Code Style\n- Follow PEP 8 for Python code\n- Use type hints throughout\n- Add docstrings for functions\n- Implement proper error handling\n- Write comprehensive tests\n\n## 🚀 Deployment\n\n### Production Deployment\n1. **Backend:** Deploy with Gunicorn + Nginx\n2. **Frontend:** Deploy with Streamlit Cloud or Docker\n3. **Database:** Use MongoDB Atlas for cloud database\n4. **Environment:** Set production environment variables\n5. **Security:** Enable HTTPS and security headers\n\n### Docker Deployment\n```bash\n# Build and run with Docker\ndocker-compose up --build\n```\n\n## 📄 License\nThis project is licensed under the MIT License - see the LICENSE file for details.\n\n## 🤝 Contributing\n1. Fork the repository\n2. Create a feature branch\n3. Make your changes\n4. Add tests for new features\n5. Submit a pull request\n\n## 📞 Support\nFor support and questions:\n- Create an issue on GitHub\n- Check the documentation\n- Review the API docs\n- Test with the provided test suite\n\n---\n\n**Built with ❤️ for modern education management**\n\n*Version 2.0.0 - Advanced Level Project*
+# 🎓 AI-Powered Attendance Tracking System
+
+## 📚 Project Overview
+A **secure, scalable, and AI-ready** backend + dashboard application designed to manage:
+
+- **Student attendance**
+- **Academic results & CGPA**
+- **Leave & holiday workflows**
+- **Faculty-student coordination**
+
+Built with **FastAPI**, **MongoDB**, **JWT authentication**, and **Streamlit dashboards**.
+
+## 🎯 Core Objectives
+
+- ✅ Automate daily attendance tracking
+- ✅ Provide role-based access (**Student / Faculty / Admin**)
+- ✅ Maintain academic performance records
+- ✅ Enable faculty-controlled attendance & results
+- ✅ Prepare system for **AI-based attendance** (Face / Location)
+
+## 🚀 Technology Stack
+
+### Backend
+| Technology | Purpose |
+|------------|---------|
+| **FastAPI** | High-performance REST API |
+| **MongoDB** | NoSQL database with indexing |
+| **JWT** | Token-based authentication |
+| **bcrypt** | Secure password hashing |
+| **Python** | Core backend language |
+
+### Frontend
+- **Streamlit** - Interactive dashboards
+
+### Future Integrations
+- 👤 Face recognition
+- 📍 Location-based attendance
+- 🔑 OTP login
+- 🔗 Google OAuth
+
+## 🧠 System Architecture
+
+Client (Web / Mobile)
+↓
+Streamlit Dashboard
+↓
+FastAPI Backend (JWT + RBAC)
+↓
+MongoDB Database
+
+
+## 🏗️ Project Structure
+Attendance-Tracking-Systems/
+│
+├── backend/
+│ ├── app/
+│ │ ├── main.py
+│ │ ├── auth/
+│ │ │ ├── jwt_handler.py
+│ │ │ └── password_utils.py
+│ │ │
+│ │ ├── models/
+│ │ │ ├── user.py
+│ │ │ ├── student.py
+│ │ │ ├── faculty.py
+│ │ │ ├── attendance.py
+│ │ │ ├── results.py
+│ │ │ ├── leaves.py
+│ │ │ ├── holidays.py
+│ │ │ └── events.py
+│ │ │
+│ │ ├── routes/
+│ │ │ ├── auth_routes.py
+│ │ │ ├── attendance_routes.py
+│ │ │ ├── results_routes.py
+│ │ │ ├── leave_routes.py
+│ │ │ ├── holiday_routes.py
+│ │ │ └── event_routes.py
+│ │ │
+│ │ ├── services/
+│ │ │ ├── attendance_service.py
+│ │ │ ├── cgpa_service.py
+│ │ │ └── email_service.py
+│ │ │
+│ │ └── utils/
+│ │ ├── validators.py
+│ │ └── response_helper.py
+│ │
+│ ├── database/
+│ │ ├── mongodb.py
+│ │ └── indexes.py
+│ │
+│ ├── scripts/
+│ │ └── clear_database.py
+│ │
+│ └── requirements.txt
+│
+├── frontend/
+│ ├── student_dashboard.py
+│ ├── faculty_dashboard.py
+│ └── admin_dashboard.py
+│
+├── tests/
+│ ├── test_complete_system.py
+│ ├── test_requirements.txt
+│ └── run_tests.bat
+│
+├── docs/
+│ ├── API_Documentation.md
+│ └── Architecture.md
+│
+├── .env.example
+├── README.md
+└── LICENSE
+
+
+## ✅ Implemented Features
+
+### 🔐 Authentication & Authorization
+- JWT-based login
+- Role-based access control (RBAC)
+- Secure password hashing with bcrypt
+
+### 📊 Attendance Management
+- Daily attendance records
+- Period-wise tracking
+- Faculty-controlled marking
+- Student attendance view
+
+### 📈 Academic Records
+- Results management
+- Semester-wise CGPA
+- Faculty write access
+
+### 🗓️ Utilities
+- Leave management system
+- Holiday calendar
+- Events & announcements
+
+## 🚧 Features In Progress
+
+- 📧 Email verification
+- 📊 Attendance percentage calculation
+- 📈 CGPA calculation service
+- ✅ Leave approval workflow
+- 📍 Location-based attendance validation
+
+## 🤖 AI & Advanced Features (Planned)
+
+| Feature | Status |
+|---------|--------|
+| 👤 Face recognition attendance | Planned |
+| 🔑 OTP-based login | Planned |
+| 🔗 Google OAuth integration | Planned |
+| 🔔 Real-time notifications | Planned |
+| 🔄 Multi-device synchronization | Planned |
+| 📤 Data export (CSV / PDF) | Planned |
+
+## 🧪 Testing
+
+### Covered Tests
+- API connectivity
+- Authentication flow
+- Attendance operations
+- Results operations
+
+### Run Tests
+pip install -r tests/test_requirements.txt
+python tests/test_complete_system.py
+
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Python 3.8+
+- MongoDB
+- Git
+
+### Installation
+git clone https://github.com/RitikPandey68/Attendance-Tracking-Systems.git
+cd backend
+pip install -r requirements.txt
+
+
+### Run Backend Server
+uvicorn app.main:app --reload --port 8000
+
+
+### Access Points
+| Endpoint | URL |
+|----------|-----|
+| **API** | http://localhost:8000 |
+| **Swagger UI** | http://localhost:8000/docs |
+| **ReDoc** | http://localhost:8000/redoc |
+
+## 🚀 Deployment Roadmap
+
+1. **Docker containerization**
+2. **SSL & security hardening**
+3. **Monitoring & logging**
+4. **Automated database backups**
+
+## 📄 License
+This project is licensed under the **MIT License**.
+
+## 👨‍💻 Author
+**Ritik Pandey**  
+*Final Year CSE Student*  
+[GitHub](https://github.com/RitikPandey68)
