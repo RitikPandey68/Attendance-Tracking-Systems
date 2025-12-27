@@ -4,6 +4,16 @@ This project is **NOT open-source**.
 Unauthorized copying, reuse, modification, or distribution
 of this code is strictly prohibited without written permission.
 
+🚨 LEGAL NOTICE
+
+This repository is publicly visible for evaluation purposes only.
+This code is NOT open-source.
+
+Any copying, reuse, modification, or redistribution
+without explicit written permission is strictly prohibited
+and may lead to legal action.
+
+
 
 
 # 🎓 AI-Powered Attendance Tracking System
