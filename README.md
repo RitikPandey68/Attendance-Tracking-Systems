@@ -1,3 +1,11 @@
+⚠️ **LICENSE NOTICE**
+
+This project is **NOT open-source**.
+Unauthorized copying, reuse, modification, or distribution
+of this code is strictly prohibited without written permission.
+
+
+
 # 🎓 AI-Powered Attendance Tracking System
 
 ## 📚 Project Overview
@@ -201,7 +209,13 @@ uvicorn app.main:app --reload --port 8000
 4. **Automated database backups**
 
 ## 📄 License
-This project is licensed under the **MIT License**.
+This project is **NOT open-source**.
+
+All rights are reserved by the author.
+Unauthorized copying, modification, redistribution, or usage
+of this code in any form is strictly prohibited.
+
+See the `LICENSE` file for full details.
 
 ## 👨‍💻 Author
 **Ritik Pandey**  
